@@ -36,7 +36,7 @@ function hitungTotal(items, kodeVoucher) {
     }
   }
 
-  const diskon = Math.round(subtotal * persenDiskon);
+  const diskon = Math.round(subtotal * persenDiskon * 0);
   return { subtotal, diskon, total: subtotal - diskon };
 }
 
