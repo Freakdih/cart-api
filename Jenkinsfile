@@ -22,15 +22,14 @@ pipeline {
             steps {
                 sh 'docker compose build'
             }
-            }
+        }
 
-            stage('Deploy') {
+        stage('Deploy') {
             steps {
                 sh 'docker compose up -d --wait'
             }
-            }
         }
-
+        }
         post {
             success {
             echo 'Pipeline berhasil: cart-api berjalan di port 3000'
