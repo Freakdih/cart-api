@@ -8,6 +8,15 @@ pipeline {
                     reuseNode true
                 }
             }
+            steps {
+                sh 'npm ci --cache .npm'
+                sh 'npm run test:ci'
+            }
+            post {
+                always {
+                    junit testResults: 'reports/junit.xml', allowEmptyResults: true
+                }
+            }
         }
     }
 }
